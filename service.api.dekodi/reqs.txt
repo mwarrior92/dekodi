@@ -1,0 +1,4 @@
+jedi==0.13.1
+Kodistubs==17.6.5
+parso==0.3.1
+typing==3.6.6

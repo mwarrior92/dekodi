@@ -1,0 +1,38 @@
+<playercorefactory>
+ <players>
+   <player name="ffprobe" type="ExternalPlayer" audio="true" video="true">
+     <filename>ffprobe</filename>
+     <args>"{0}" -print_format json -show_streams >> ffprobe-stats.txt</args>
+     <hidexbmc>false</hidexbmc>
+     <hideconsole>false</hideconsole>
+     <warpcursor>none</warpcursor>
+   </player>
+
+ <player name="echo" type="ExternalPlayer" audio="true" video="true">
+     <filename>echo</filename>
+     <args>"{0}" "{1}" "{2}" >> URLs.txt</args>
+     <hidexbmc>false</hidexbmc>
+     <hideconsole>false</hideconsole>
+     <warpcursor>none</warpcursor>
+   </player>
+
+ <player name="xmlrpc" type="ExternalPlayer" audio="true" video="true">
+     <filename>python</filename>
+     <args>$HOME/.kodi/addons/service.api.dekodi/url_pusher.py "{0}" "{1}" "{2}"</args>
+     <hidexbmc>false</hidexbmc>
+     <hideconsole>false</hideconsole>
+     <warpcursor>none</warpcursor>
+   </player>
+
+	<player name="vlc" type="ExternalPlayer" audio="true" video="true">
+     <filename>vlc</filename>
+     <args>"{1}"</args>
+     <hidexbmc>false</hidexbmc>
+     <hideconsole>false</hideconsole>
+     <warpcursor>none</warpcursor>
+   </player>
+ </players>
+ <rules action="prepend">
+   <rule filetypes="*" filename="*" player="xmlrpc"/>
+ </rules>
+</playercorefactory>
